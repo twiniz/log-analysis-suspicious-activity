@@ -46,3 +46,37 @@ log analysis, and basic threat detection logic used in Security Operations Cente
 Log analysis is a core responsibility of SOC analysts.
 This project demonstrates how attackers behave in logs and how defenders
 can detect and document suspicious activity using simple, effective logic.
+
+log-analysis-suspicious-activity/
+├── analyzer/
+│   └── log_analyzer.py
+├── logs/
+│   └── auth.log
+├── reports/
+│   └── investigation_report.txt
+├── screenshots/
+│   └── sample-output.png
+├── README.md
+
+## Overview
+This project simulates a **SOC investigation** by analyzing Linux authentication logs to detect suspicious activity and potential compromise.
+
+## Threats Detected
+- Brute-force login attempts
+- Privilege escalation via sudo/su
+- Suspicious access to sensitive system files
+- Post-compromise behavior indicators
+
+## How It Works
+1. Parses Linux auth logs
+2. Applies detection rules
+3. Flags high-risk behavior
+4. Generates an investigation report
+
+## Sample Output
+(Include screenshot or pasted output)
+
+## Why This Matters
+These detections mirror what SOC analysts monitor daily to identify early-stage attacks and insider threats.
+
+
