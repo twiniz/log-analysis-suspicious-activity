@@ -1,82 +1,91 @@
-# Log Analysis & Suspicious Activity Detection
+# Log Analysis – Suspicious Activity Investigation
 
 ## Overview
-This project is a beginner-friendly SOC-style log analysis tool written in Python.
-It analyzes authentication logs to identify suspicious activity such as brute-force
-attacks and username spraying attempts.
+This project simulates a **SOC analyst log investigation** using Linux authentication logs.
+The goal is to identify suspicious behavior such as brute-force login attempts and analyze
+authentication events to determine whether a system compromise may have occurred.
 
-The goal of this project is to demonstrate practical defensive security skills,
-log analysis, and basic threat detection logic used in Security Operations Centers (SOC).
+This project focuses on **investigation, detection, and reporting**, not just scripting.
 
+---
 
+## Scenario
+A Linux server experienced multiple failed SSH login attempts from an external IP address.
+Security analysts were tasked with reviewing authentication logs to determine:
 
-## What This Tool Detects
- Multiple failed login attempts from the same IP (possible brute-force)
- Multiple usernames targeted by a single IP (username spraying)
- Top IP addresses by failed login attempts
+- Whether a brute-force attack occurred
+- If any login attempts were successful
+- Which IP addresses and users were involved
+- What actions should be taken next
 
+---
 
+## Data Source
+- Simulated Linux authentication logs (`auth.log`)
+- Log format mirrors real `/var/log/auth.log` entries
 
-## How It Works
-1. Reads an authentication log file (`sample_auth.log`)
-2. Extracts IP addresses and usernames from failed login events
-3. Applies simple detection thresholds
-4. Generates a SOC-style alert report (`alerts_report.txt`)
+---
 
+## Tools & Skills Used
+- Linux log analysis
+- Python scripting
+- Regular expressions (regex)
+- Security event investigation
+- Incident reporting
+- SOC-style documentation
 
+---
 
-## Technologies Used
- Python
- Regular Expressions (Regex)
- Linux (Kali)
- Log analysis concepts
- Defensive security fundamentals
-
-
-
-## Files in This Repository
- `log_analyzer.py` – Analyzes logs and detects suspicious activity
- `sample_auth.log` – Sample authentication log for testing
- `alerts_report.txt` – Generated security alert report
- `README.md` – Project documentation
-
-
-
-## Why This Project Matters
-Log analysis is a core responsibility of SOC analysts.
-This project demonstrates how attackers behave in logs and how defenders
-can detect and document suspicious activity using simple, effective logic.
+## Project Structure
 
 log-analysis-suspicious-activity/
 ├── analyzer/
-│   └── log_analyzer.py
+│   └── log_analyzer.py        # Python script used to analyze auth logs
 ├── logs/
-│   └── auth.log
+│   └── auth.log               # Sample Linux authentication log data
 ├── reports/
-│   └── investigation_report.txt
+│   └── investigation_report.txt  # Final investigation findings
 ├── screenshots/
-│   └── sample-output.png
+│   └── sample-output.png      # Script execution output
 ├── README.md
 
-## Overview
-This project simulates a **SOC investigation** by analyzing Linux authentication logs to detect suspicious activity and potential compromise.
+---
 
-## Threats Detected
-- Brute-force login attempts
-- Privilege escalation via sudo/su
-- Suspicious access to sensitive system files
-- Post-compromise behavior indicators
+## Detection Logic
+The analysis script performs the following checks:
 
-## How It Works
-1. Parses Linux auth logs
-2. Applies detection rules
-3. Flags high-risk behavior
-4. Generates an investigation report
+- Counts failed SSH login attempts per IP address
+- Flags potential brute-force behavior
+- Identifies successful login events
+- Summarizes findings into a readable investigation report
 
-## Sample Output
-(Include screenshot or pasted output)
+---
 
-## Why This Matters
-These detections mirror what SOC analysts monitor daily to identify early-stage attacks and insider threats.
+## Findings Summary
+- Multiple failed SSH login attempts detected from a single IP
+- Activity consistent with a brute-force attempt
+- A successful login was later observed from a trusted internal IP
+- No evidence of successful compromise from the attacking IP
 
+---
+
+## Outcome
+This investigation demonstrates how a SOC analyst:
+- Reviews raw log data
+- Identifies suspicious patterns
+- Separates false positives from real threats
+- Documents findings clearly for escalation or remediation
+
+---
+
+## Future Improvements
+- Add alert thresholds (e.g., >5 failed attempts)
+- Support additional log sources
+- Timestamp correlation across events
+- Export findings in JSON or CSV format
+
+---
+
+## Disclaimer
+All logs and data used in this project are simulated for educational purposes only.
 
