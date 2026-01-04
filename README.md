@@ -124,3 +124,10 @@ See `reports/example_alerts_report.txt` for full output.
 ![Sample Output](screenshots/sample-output.png)
 
 
+## 📸 Sample SOC Investigation Output
+
+The screenshot below shows the tool analyzing Linux authentication logs
+and generating SOC-style alerts for suspicious activity such as
+brute-force attacks and username spraying.
+
+![SOC Investigation Output](screenshots/sample-output.png)
