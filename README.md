@@ -89,3 +89,26 @@ This investigation demonstrates how a SOC analyst:
 ## Disclaimer
 All logs and data used in this project are simulated for educational purposes only.
 
+## 🔍 What This Project Demonstrates
+
+This project simulates a **SOC-style log investigation** workflow.  
+It demonstrates how a security analyst:
+
+- Reviews authentication logs
+- Detects suspicious login behavior
+- Identifies potential brute-force attempts
+- Documents findings in an investigation report
+
+- ## ⚙️ How It Works
+
+1. Authentication logs are stored in the `logs/` directory
+2. The Python analyzer scans logs for suspicious patterns
+3. Detected events are summarized into a report
+4. Findings are saved in the `reports/` directory
+
+## ▶️ How to Run
+
+```bash
+python3 analyzer/log_analyzer.py
+
+
