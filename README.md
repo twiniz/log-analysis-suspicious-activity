@@ -7,6 +7,14 @@ authentication events to determine whether a system compromise may have occurred
 
 This project focuses on **investigation, detection, and reporting**, not just scripting.
 
+## Sample SOC Investigation Output
+
+The screenshot below shows the tool detecting suspicious authentication behavior,
+including brute-force attempts, username spraying, and successful logins after
+repeated failures.
+
+![SOC Investigation Output](screenshots/sample-output.png)
+
 ---
 
 ## Scenario
